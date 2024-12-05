@@ -19,5 +19,6 @@ public:
 
 private:
     Ui::SendEmailsPage *ui;
+
 };
 #endif // SENDEMAILSPAGE_H
