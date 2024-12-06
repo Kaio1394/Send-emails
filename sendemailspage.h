@@ -17,6 +17,9 @@ public:
     SendEmailsPage(QWidget *parent = nullptr);
     ~SendEmailsPage();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::SendEmailsPage *ui;
 
