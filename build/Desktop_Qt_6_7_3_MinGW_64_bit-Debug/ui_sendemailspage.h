@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -18,7 +19,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -34,7 +34,7 @@ public:
     QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget_config;
     QWidget *tab;
-    QVBoxLayout *verticalLayout_4;
+    QVBoxLayout *verticalLayout_2;
     QFormLayout *formLayout_2;
     QLabel *label_3;
     QLineEdit *sender;
@@ -42,22 +42,26 @@ public:
     QLineEdit *to;
     QLabel *label_5;
     QLineEdit *subject;
+    QFormLayout *formLayout_3;
+    QCheckBox *checkBox_Threads;
+    QLineEdit *qtdy_threads;
+    QCheckBox *checkBox_attach;
+    QLineEdit *pathDirFiles;
     QTextEdit *body;
     QPushButton *pushButton;
     QWidget *tab_3;
-    QVBoxLayout *verticalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QSpacerItem *verticalSpacer_2;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer_2;
-    QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *server;
     QLabel *label_2;
     QLineEdit *port;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *verticalSpacer;
-    QWidget *tab_2;
+    QWidget *widget1;
+    QFormLayout *formLayout;
+    QLabel *label_6;
+    QLineEdit *lineEdit;
+    QLabel *label_7;
+    QLineEdit *lineEdit_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -65,7 +69,7 @@ public:
     {
         if (SendEmailsPage->objectName().isEmpty())
             SendEmailsPage->setObjectName("SendEmailsPage");
-        SendEmailsPage->resize(455, 302);
+        SendEmailsPage->resize(455, 361);
         centralwidget = new QWidget(SendEmailsPage);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -74,8 +78,8 @@ public:
         tabWidget_config->setObjectName("tabWidget_config");
         tab = new QWidget();
         tab->setObjectName("tab");
-        verticalLayout_4 = new QVBoxLayout(tab);
-        verticalLayout_4->setObjectName("verticalLayout_4");
+        verticalLayout_2 = new QVBoxLayout(tab);
+        verticalLayout_2->setObjectName("verticalLayout_2");
         formLayout_2 = new QFormLayout();
         formLayout_2->setObjectName("formLayout_2");
         label_3 = new QLabel(tab);
@@ -109,78 +113,99 @@ public:
         formLayout_2->setWidget(2, QFormLayout::FieldRole, subject);
 
 
-        verticalLayout_4->addLayout(formLayout_2);
+        verticalLayout_2->addLayout(formLayout_2);
+
+        formLayout_3 = new QFormLayout();
+        formLayout_3->setObjectName("formLayout_3");
+        checkBox_Threads = new QCheckBox(tab);
+        checkBox_Threads->setObjectName("checkBox_Threads");
+
+        formLayout_3->setWidget(0, QFormLayout::LabelRole, checkBox_Threads);
+
+        qtdy_threads = new QLineEdit(tab);
+        qtdy_threads->setObjectName("qtdy_threads");
+
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, qtdy_threads);
+
+        checkBox_attach = new QCheckBox(tab);
+        checkBox_attach->setObjectName("checkBox_attach");
+
+        formLayout_3->setWidget(1, QFormLayout::LabelRole, checkBox_attach);
+
+        pathDirFiles = new QLineEdit(tab);
+        pathDirFiles->setObjectName("pathDirFiles");
+
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, pathDirFiles);
+
+
+        verticalLayout_2->addLayout(formLayout_3);
 
         body = new QTextEdit(tab);
         body->setObjectName("body");
 
-        verticalLayout_4->addWidget(body);
+        verticalLayout_2->addWidget(body);
 
         pushButton = new QPushButton(tab);
         pushButton->setObjectName("pushButton");
 
-        verticalLayout_4->addWidget(pushButton);
+        verticalLayout_2->addWidget(pushButton);
 
         tabWidget_config->addTab(tab, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName("tab_3");
-        verticalLayout_3 = new QVBoxLayout(tab_3);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        verticalLayout_2->addItem(verticalSpacer_2);
-
-        horizontalLayout = new QHBoxLayout();
+        widget = new QWidget(tab_3);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(11, 10, 302, 26));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        formLayout = new QFormLayout();
-        formLayout->setObjectName("formLayout");
-        label = new QLabel(tab_3);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
         label->setObjectName("label");
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, label);
+        horizontalLayout->addWidget(label);
 
-        server = new QLineEdit(tab_3);
+        server = new QLineEdit(widget);
         server->setObjectName("server");
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, server);
+        horizontalLayout->addWidget(server);
 
-        label_2 = new QLabel(tab_3);
+        label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
+        horizontalLayout->addWidget(label_2);
 
-        port = new QLineEdit(tab_3);
+        port = new QLineEdit(widget);
         port->setObjectName("port");
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, port);
+        horizontalLayout->addWidget(port);
 
+        widget1 = new QWidget(tab_3);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(11, 71, 172, 56));
+        formLayout = new QFormLayout(widget1);
+        formLayout->setObjectName("formLayout");
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_6 = new QLabel(widget1);
+        label_6->setObjectName("label_6");
 
-        horizontalLayout->addLayout(formLayout);
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_6);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        lineEdit = new QLineEdit(widget1);
+        lineEdit->setObjectName("lineEdit");
 
-        horizontalLayout->addItem(horizontalSpacer);
+        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
 
+        label_7 = new QLabel(widget1);
+        label_7->setObjectName("label_7");
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        lineEdit_2 = new QLineEdit(widget1);
+        lineEdit_2->setObjectName("lineEdit_2");
 
-        verticalLayout_2->addItem(verticalSpacer);
-
-
-        verticalLayout_3->addLayout(verticalLayout_2);
+        formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_2);
 
         tabWidget_config->addTab(tab_3, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName("tab_2");
-        tabWidget_config->addTab(tab_2, QString());
 
         verticalLayout->addWidget(tabWidget_config);
 
@@ -208,12 +233,15 @@ public:
         sender->setText(QString());
         label_4->setText(QCoreApplication::translate("SendEmailsPage", "To:", nullptr));
         label_5->setText(QCoreApplication::translate("SendEmailsPage", "Subject: ", nullptr));
+        checkBox_Threads->setText(QCoreApplication::translate("SendEmailsPage", "Threads", nullptr));
+        checkBox_attach->setText(QCoreApplication::translate("SendEmailsPage", "Attachment Files", nullptr));
         pushButton->setText(QCoreApplication::translate("SendEmailsPage", "Send", nullptr));
         tabWidget_config->setTabText(tabWidget_config->indexOf(tab), QCoreApplication::translate("SendEmailsPage", "Email", nullptr));
         label->setText(QCoreApplication::translate("SendEmailsPage", "Server: ", nullptr));
         label_2->setText(QCoreApplication::translate("SendEmailsPage", "Port: ", nullptr));
+        label_6->setText(QCoreApplication::translate("SendEmailsPage", "User: ", nullptr));
+        label_7->setText(QCoreApplication::translate("SendEmailsPage", "Password: ", nullptr));
         tabWidget_config->setTabText(tabWidget_config->indexOf(tab_3), QCoreApplication::translate("SendEmailsPage", "Config", nullptr));
-        tabWidget_config->setTabText(tabWidget_config->indexOf(tab_2), QCoreApplication::translate("SendEmailsPage", "Tab 2", nullptr));
     } // retranslateUi
 
 };
