@@ -53,19 +53,19 @@ HEADERS += \
     src/smtpclient.h \
     src/smtpmime_global.h
 
-
 FORMS += \
     sendemailspage.ui
 
 INCLUDEPATH += $$PWD/lib
 
-LIBS += -L$$PWD/lib -lSmtpMime2
+LIBS += -L$$PWD/src -lSmtpMime2
 
-DISTFILES += $$PWD/lib/SmtpMime2.dll
+DISTFILES += $$PWD/src/SmtpMime2.dll \
+    src/SmtpMime2.dll
 
 INSTALLS += dlls
 dlls.path = $$OUT_PWD
-dlls.files += $$PWD/lib/SmtpMime2.dll
+dlls.files += $$PWD/src/SmtpMime2.dll
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
